@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Advance filtering</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="./scripts/filtering.js"></script>
+  </head>
+
+  <body ng-cloak>
+    <div class="container" ng-controller="MyCtrl">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="mt-3">Filter select input options</h1>
+          <div class="alert alert-warning" role="alert">
+            Any selected option will disappear for future selections!
+          </div>
+        </div>
+        <div class="col-12">
+        <form name="form">
+          <div ng-repeat="select in data.selectInputs">
+            <div class="mb-2">
+              <label for="repeatSelect"> {{ select.name }} {{ $index }}</label>
+              <select
+                id="repeatSelect{{ $index }}"
+                class="form-select"
+                name="repeatSelect{{ $index }}"
+                ng-model="select.selectedOption"
+              >
+                <option
+                  ng-repeat="option in getAvailableOptions(select.selectedOption)"
+                  value="{{ option.id }}"
+                >
+                  {{option.name}}
+                </option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
