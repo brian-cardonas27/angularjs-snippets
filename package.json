@@ -1,12 +1,12 @@
 {
   "name": "angularjs-snippets",
   "version": "1.0.0",
-  "description": "",
+  "description": "AngularJS code snipptes",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Brian",
   "license": "ISC",
   "dependencies": {
     "angular": "^1.8.2",
